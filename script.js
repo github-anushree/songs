@@ -142,6 +142,7 @@ async function main() {
         playMusic(songs[index - 1] ? songs[index - 1]: songs[songs.length - 1]);
     })
     // add an event listener to next clicked
+    
     next.addEventListener("click", ()=>{
         let index = songs.findIndex((songPath) => {
             return songPath[1] === `/${currentSong.src.split("/").slice(-1)}`
