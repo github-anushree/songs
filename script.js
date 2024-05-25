@@ -15,7 +15,7 @@ function formatTime(seconds) {
 
 async function getSongs() {
 
-    let a = await fetch('http://192.168.0.106:5501/songs/')
+    let a = await fetch('./songs/')
     let response = await a.text();
     console.log(response)
     let div = document.createElement("div")
@@ -142,7 +142,7 @@ async function main() {
         playMusic(songs[index - 1] ? songs[index - 1]: songs[songs.length - 1]);
     })
     // add an event listener to next clicked
-    
+
     next.addEventListener("click", ()=>{
         let index = songs.findIndex((songPath) => {
             return songPath[1] === `/${currentSong.src.split("/").slice(-1)}`
